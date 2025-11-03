@@ -36,11 +36,11 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
     : '0';
 
   return (
-    <div className="bg-panel-bg rounded-lg p-4 h-full flex flex-col overflow-y-auto">
-      <div className="flex gap-2 mb-4">
+    <div className="bg-panel-bg rounded-lg p-2 sm:p-3 md:p-4 h-full flex flex-col overflow-y-auto">
+      <div className="flex gap-1.5 sm:gap-2 mb-3 sm:mb-4">
         <button
           onClick={() => setOrderType('long')}
-          className={`flex-1 py-2 rounded font-medium text-sm transition-colors ${
+          className={`flex-1 py-1.5 sm:py-2 rounded font-medium text-xs sm:text-sm transition-colors ${
             orderType === 'long'
               ? 'bg-primary text-black'
               : 'bg-bg-base text-muted'
@@ -50,7 +50,7 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
         </button>
         <button
           onClick={() => setOrderType('short')}
-          className={`flex-1 py-2 rounded font-medium text-sm transition-colors ${
+          className={`flex-1 py-1.5 sm:py-2 rounded font-medium text-xs sm:text-sm transition-colors ${
             orderType === 'short'
               ? 'bg-danger text-white'
               : 'bg-bg-base text-muted'
@@ -60,16 +60,16 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
         </button>
       </div>
 
-      <div className="space-y-3">
+      <div className="space-y-2 sm:space-y-3">
         <div className="relative">
           <button
             onClick={() => setShowPriceDropdown(!showPriceDropdown)}
-            className="w-full flex items-center justify-between bg-bg-base px-3 py-2.5 rounded text-sm"
+            className="w-full flex items-center justify-between bg-bg-base px-2 sm:px-3 py-2 sm:py-2.5 rounded text-xs sm:text-sm"
           >
             <span className="text-text-primary">
               {priceType === 'market' ? 'Market Price' : 'Limit Price'}
             </span>
-            <ChevronDown size={16} className="text-muted" />
+            <ChevronDown size={14} className="text-muted sm:w-4 sm:h-4" />
           </button>
           {showPriceDropdown && (
             <div className="absolute top-full left-0 right-0 mt-1 bg-panel-bg border border-muted rounded z-10">
@@ -78,7 +78,7 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
                   setPriceType('market');
                   setShowPriceDropdown(false);
                 }}
-                className="w-full px-3 py-2 text-left text-sm text-text-primary hover:bg-bg-base"
+                className="w-full px-2 sm:px-3 py-1.5 sm:py-2 text-left text-xs sm:text-sm text-text-primary hover:bg-bg-base"
               >
                 Market Price
               </button>
@@ -87,7 +87,7 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
                   setPriceType('limit');
                   setShowPriceDropdown(false);
                 }}
-                className="w-full px-3 py-2 text-left text-sm text-text-primary hover:bg-bg-base"
+                className="w-full px-2 sm:px-3 py-1.5 sm:py-2 text-left text-xs sm:text-sm text-text-primary hover:bg-bg-base"
               >
                 Limit Price
               </button>
@@ -102,7 +102,7 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
               value={limitPrice}
               onChange={(e) => setLimitPrice(e.target.value)}
               placeholder="Enter limit price"
-              className="w-full bg-bg-base px-3 py-2.5 rounded text-sm text-text-primary placeholder:text-muted focus:outline-none focus:ring-1 focus:ring-primary"
+              className="w-full bg-bg-base px-2 sm:px-3 py-2 sm:py-2.5 rounded text-xs sm:text-sm text-text-primary placeholder:text-muted focus:outline-none focus:ring-1 focus:ring-primary"
             />
           </div>
         )}
@@ -110,10 +110,10 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
         <div className="relative">
           <button
             onClick={() => setShowAssetDropdown(!showAssetDropdown)}
-            className="w-full flex items-center justify-between bg-bg-base px-3 py-2.5 rounded text-sm"
+            className="w-full flex items-center justify-between bg-bg-base px-2 sm:px-3 py-2 sm:py-2.5 rounded text-xs sm:text-sm"
           >
             <span className="text-text-primary">{assetType.toUpperCase()}</span>
-            <ChevronDown size={16} className="text-muted" />
+            <ChevronDown size={14} className="text-muted sm:w-4 sm:h-4" />
           </button>
           {showAssetDropdown && (
             <div className="absolute top-full left-0 right-0 mt-1 bg-panel-bg border border-muted rounded z-10">
@@ -122,7 +122,7 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
                   setAssetType('usdc');
                   setShowAssetDropdown(false);
                 }}
-                className="w-full px-3 py-2 text-left text-sm text-text-primary hover:bg-bg-base"
+                className="w-full px-2 sm:px-3 py-1.5 sm:py-2 text-left text-xs sm:text-sm text-text-primary hover:bg-bg-base"
               >
                 USDC
               </button>
@@ -131,7 +131,7 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
                   setAssetType('shares');
                   setShowAssetDropdown(false);
                 }}
-                className="w-full px-3 py-2 text-left text-sm text-text-primary hover:bg-bg-base"
+                className="w-full px-2 sm:px-3 py-1.5 sm:py-2 text-left text-xs sm:text-sm text-text-primary hover:bg-bg-base"
               >
                 Shares
               </button>
@@ -139,9 +139,9 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
           )}
         </div>
 
-        <div className="text-muted text-xs">${availableBalance.toFixed(2)} Available</div>
+        <div className="text-muted text-[10px] sm:text-xs">${availableBalance.toFixed(2)} Available</div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2">
           <button
             onClick={() => {
               const currentAmount = parseFloat(amount) || 0;
@@ -149,76 +149,76 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
                 setAmount((currentAmount - 1).toFixed(2));
               }
             }}
-            className="w-8 h-8 flex items-center justify-center bg-bg-base rounded text-muted hover:text-text-primary"
+            className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center bg-bg-base rounded text-muted hover:text-text-primary"
           >
-            <Minus size={16} />
+            <Minus size={14} className="sm:w-4 sm:h-4" />
           </button>
           <input
             type="text"
             value={amount}
             onChange={(e) => handleAmountChange(e.target.value)}
-            className="flex-1 bg-bg-base px-3 py-2 rounded text-sm text-text-primary text-center focus:outline-none focus:ring-1 focus:ring-primary"
+            className="flex-1 bg-bg-base px-2 sm:px-3 py-1.5 sm:py-2 rounded text-xs sm:text-sm text-text-primary text-center focus:outline-none focus:ring-1 focus:ring-primary"
           />
           <button
             onClick={() => {
               const currentAmount = parseFloat(amount) || 0;
               setAmount((currentAmount + 1).toFixed(2));
             }}
-            className="w-8 h-8 flex items-center justify-center bg-bg-base rounded text-muted hover:text-text-primary"
+            className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center bg-bg-base rounded text-muted hover:text-text-primary"
           >
-            <Plus size={16} />
+            <Plus size={14} className="sm:w-4 sm:h-4" />
           </button>
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex gap-1.5 sm:gap-2">
           <button
             onClick={() => handlePercentClick(25)}
-            className="flex-1 py-1.5 bg-bg-base rounded text-xs text-muted hover:text-text-primary"
+            className="flex-1 py-1 sm:py-1.5 bg-bg-base rounded text-[10px] sm:text-xs text-muted hover:text-text-primary"
           >
             25%
           </button>
           <button
             onClick={() => handlePercentClick(50)}
-            className="flex-1 py-1.5 bg-bg-base rounded text-xs text-muted hover:text-text-primary"
+            className="flex-1 py-1 sm:py-1.5 bg-bg-base rounded text-[10px] sm:text-xs text-muted hover:text-text-primary"
           >
             50%
           </button>
           <button
             onClick={() => handlePercentClick(100)}
-            className="flex-1 py-1.5 bg-bg-base rounded text-xs text-muted hover:text-text-primary"
+            className="flex-1 py-1 sm:py-1.5 bg-bg-base rounded text-[10px] sm:text-xs text-muted hover:text-text-primary"
           >
             100%
           </button>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2">
           <input
             type="checkbox"
             id="reduce-only"
             checked={reduceOnly}
             onChange={(e) => setReduceOnly(e.target.checked)}
-            className="w-4 h-4 bg-bg-base border border-muted rounded"
+            className="w-3.5 h-3.5 sm:w-4 sm:h-4 bg-bg-base border border-muted rounded"
           />
-          <label htmlFor="reduce-only" className="text-text-primary text-sm">
+          <label htmlFor="reduce-only" className="text-text-primary text-xs sm:text-sm">
             Reduce only
           </label>
         </div>
 
-        <div className="flex items-center justify-between text-sm">
+        <div className="flex items-center justify-between text-xs sm:text-sm">
           <span className="text-text-primary flex items-center gap-1">
-            To Win <Info size={14} className="text-muted" />
+            To Win <Info size={12} className="text-muted sm:w-3.5 sm:h-3.5" />
           </span>
           <span className="text-text-primary">${toWinAmount}</span>
         </div>
 
-        <div className="flex items-center justify-between text-sm">
+        <div className="flex items-center justify-between text-xs sm:text-sm">
           <span className="text-muted">Avg. price</span>
           <span className="text-text-primary">30¢</span>
         </div>
 
         <button
           disabled={!amount || parseFloat(amount) === 0}
-          className={`w-full py-3 rounded font-semibold text-sm transition-opacity ${
+          className={`w-full py-2 sm:py-2.5 md:py-3 rounded font-semibold text-xs sm:text-sm transition-opacity ${
             orderType === 'long'
               ? 'bg-primary text-black'
               : 'bg-danger text-white'

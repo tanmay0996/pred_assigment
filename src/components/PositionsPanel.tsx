@@ -24,7 +24,7 @@ export const PositionsPanel = ({ positions, onClosePosition }: PositionsPanelPro
   const [activeTab, setActiveTab] = useState<TabType>('positions');
 
   return (
-    <div className="bg-panel-bg rounded-lg">
+    <div className="bg-panel-bg rounded-lg min-h-[240px]">
       <div className="flex border-b border-muted/20">
         <button
           onClick={() => setActiveTab('positions')}
@@ -128,7 +128,7 @@ const PositionItem = ({ position, onClose }: PositionItemProps) => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs mb-3">
+      <div className="grid grid-cols-1 gap-y-2 text-xs mb-3">
         <div className="flex justify-between">
           <span className="text-muted">Avg. price</span>
           <span className="text-text-primary">{position.avgPrice}</span>
