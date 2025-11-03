@@ -77,11 +77,11 @@ export const TradeScreen = () => {
         </button>
       </div>
 
-      <div className="px-2 sm:px-3 md:px-4">
+      <div className=" sm:px-3 md:px-4">
         <PositionsPanel positions={positions} onClosePosition={handleClosePosition} />
       </div>
 
-      <FooterSection selectedTeam="Manchester city" />
+      {/* <FooterSection selectedTeam="Manchester city" /> */}
       <NavigationBar activeTab="trade" />
     </div>
   );
