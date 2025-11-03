@@ -70,9 +70,9 @@ export const TradeScreen = () => {
         </div>
       </div>
 
-      <div className="px-2 sm:px-3 md:px-4 py-2 sm:py-2.5 md:py-3 flex items-center justify-between">
-        <span className="text-text-primary text-xs sm:text-sm font-medium">EPL</span>
-        <button className="text-muted">
+      <div className="px-2 sm:px-3 md:px-4 py-2 sm:py-2.5 md:py-3 flex items-center justify-between bg-dark-bg">
+        <span className="text-white text-xs sm:text-sm font-medium">EPL</span>
+        <button className="text-gray-400 hover:text-gray-300">
           <MoreVertical size={20} />
         </button>
       </div>

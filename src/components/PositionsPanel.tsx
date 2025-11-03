@@ -24,14 +24,14 @@ export const PositionsPanel = ({ positions, onClosePosition }: PositionsPanelPro
   const [activeTab, setActiveTab] = useState<TabType>('positions');
 
   return (
-    <div className="bg-panel-bg rounded-lg min-h-[240px]">
-      <div className="flex border-b border-muted/20">
+    <div className="bg-dark-bg rounded-lg min-h-[240px] border border-dark-panel">
+      <div className="flex border-b border-dark-panel">
         <button
           onClick={() => setActiveTab('positions')}
           className={`flex-1 py-3 text-sm font-medium transition-colors ${
             activeTab === 'positions'
-              ? 'text-text-primary border-b-2 border-primary'
-              : 'text-muted'
+              ? 'text-white border-b-2 border-primary'
+              : 'text-gray-500'
           }`}
         >
           Positions
@@ -40,8 +40,8 @@ export const PositionsPanel = ({ positions, onClosePosition }: PositionsPanelPro
           onClick={() => setActiveTab('orders')}
           className={`flex-1 py-3 text-sm font-medium transition-colors ${
             activeTab === 'orders'
-              ? 'text-text-primary border-b-2 border-primary'
-              : 'text-muted'
+              ? 'text-white border-b-2 border-primary'
+              : 'text-gray-500'
           }`}
         >
           Open orders
@@ -50,19 +50,19 @@ export const PositionsPanel = ({ positions, onClosePosition }: PositionsPanelPro
           onClick={() => setActiveTab('history')}
           className={`flex-1 py-3 text-sm font-medium transition-colors ${
             activeTab === 'history'
-              ? 'text-text-primary border-b-2 border-primary'
-              : 'text-muted'
+              ? 'text-white border-b-2 border-primary'
+              : 'text-gray-500'
           }`}
         >
           Trade History
         </button>
       </div>
 
-      <div className="p-4">
+      <div className="p-4 bg-dark-bg">
         {activeTab === 'positions' && (
           <div className="space-y-4">
             {positions.length === 0 ? (
-              <div className="text-center py-8 text-muted text-sm">
+              <div className="text-center py-8 text-gray-500 text-sm">
                 No open positions
               </div>
             ) : (
@@ -78,13 +78,13 @@ export const PositionsPanel = ({ positions, onClosePosition }: PositionsPanelPro
         )}
 
         {activeTab === 'orders' && (
-          <div className="text-center py-8 text-muted text-sm">
+          <div className="text-center py-8 text-gray-500 text-sm">
             No open orders
           </div>
         )}
 
         {activeTab === 'history' && (
-          <div className="text-center py-8 text-muted text-sm">
+          <div className="text-center py-8 text-gray-500 text-sm">
             No trade history
           </div>
         )}
@@ -116,8 +116,8 @@ const PositionItem = ({ position, onClose }: PositionItemProps) => {
     >
       <div className="flex items-start justify-between mb-3">
         <div>
-          <h4 className="text-text-primary font-medium text-sm">{position.outcome}</h4>
-          <p className="text-muted text-xs mt-0.5">
+          <h4 className="text-white font-medium text-sm">{position.outcome}</h4>
+          <p className="text-gray-400 text-xs mt-0.5">
             Winner · {position.type}
           </p>
         </div>
@@ -130,33 +130,33 @@ const PositionItem = ({ position, onClose }: PositionItemProps) => {
 
       <div className="grid grid-cols-1 gap-y-2 text-xs mb-3">
         <div className="flex justify-between">
-          <span className="text-muted">Avg. price</span>
-          <span className="text-text-primary">{position.avgPrice}</span>
+          <span className="text-gray-400">Avg. price</span>
+          <span className="text-white">{position.avgPrice}</span>
         </div>
         <div className="flex justify-between">
-          <span className="text-muted">Mark price</span>
-          <span className="text-text-primary">{position.markPrice}</span>
+          <span className="text-gray-400">Mark price</span>
+          <span className="text-white">{position.markPrice}</span>
         </div>
         <div className="flex justify-between">
-          <span className="text-muted">Shares</span>
-          <span className="text-text-primary">{position.shares.toLocaleString()}</span>
+          <span className="text-gray-400">Shares</span>
+          <span className="text-white">{position.shares.toLocaleString()}</span>
         </div>
         <div className="flex justify-between">
-          <span className="text-muted">Current value</span>
-          <span className="text-text-primary">{position.currentValue}</span>
+          <span className="text-gray-400">Current value</span>
+          <span className="text-white">{position.currentValue}</span>
         </div>
       </div>
 
       <div className="flex gap-2">
         <button
           onClick={() => handleClose('market')}
-          className="flex-1 py-2 bg-bg-base text-text-primary text-sm rounded hover:bg-muted/20 transition-colors"
+          className="flex-1 py-2 bg-dark-panel text-white text-sm rounded hover:bg-dark-panel-hover transition-colors"
         >
           Market close
         </button>
         <button
           onClick={() => handleClose('limit')}
-          className="flex-1 py-2 bg-bg-base text-text-primary text-sm rounded hover:bg-muted/20 transition-colors"
+          className="flex-1 py-2 bg-dark-panel text-white text-sm rounded hover:bg-dark-panel-hover transition-colors"
         >
           Limit close
         </button>
