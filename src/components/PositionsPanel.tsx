@@ -26,12 +26,12 @@ export const PositionsPanel = ({ positions, onClosePosition }: PositionsPanelPro
 
   return (
     <div className="bg-dark-bg min-h-[240px] border border-dark-panel w-full max-w-[412px]">
-      <div className="flex border-b border-dark-panel">
+      <div className="flex border-b" style={{ borderColor: '#1B2A30' }}>
         <button
           onClick={() => setActiveTab('positions')}
           className={`flex-1 py-3 text-sm font-medium transition-colors ${
             activeTab === 'positions'
-              ? 'text-white border-b-2 border-primary'
+              ? 'text-white'
               : 'text-gray-500'
           }`}
         >
@@ -41,7 +41,7 @@ export const PositionsPanel = ({ positions, onClosePosition }: PositionsPanelPro
           onClick={() => setActiveTab('orders')}
           className={`flex-1 py-3 text-sm font-medium transition-colors ${
             activeTab === 'orders'
-              ? 'text-white border-b-2 border-primary'
+              ? 'text-white'
               : 'text-gray-500'
           }`}
         >
@@ -51,7 +51,7 @@ export const PositionsPanel = ({ positions, onClosePosition }: PositionsPanelPro
           onClick={() => setActiveTab('history')}
           className={`flex-1 py-3 text-sm font-medium transition-colors ${
             activeTab === 'history'
-              ? 'text-white border-b-2 border-primary'
+              ? 'text-white'
               : 'text-gray-500'
           }`}
         >

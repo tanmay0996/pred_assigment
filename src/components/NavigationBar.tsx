@@ -7,7 +7,7 @@ interface NavigationBarProps {
 export const NavigationBar = ({ activeTab = 'trade' }: NavigationBarProps) => {
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-dark-bg border-t border-dark-panel">
-      <div className="flex items-center justify-around py-1.5 sm:py-2">
+      <div className="flex items-center justify-around py-5 sm:py-2">
         <NavButton icon={<TrendingUp size={18} />} label="Markets" active={false} />
         <NavButton icon={<BarChart3 size={18} />} label="Trade" active={activeTab === 'trade'} />
         <NavButton icon={<DollarSign size={18} />} label="$0.00" active={false} />
