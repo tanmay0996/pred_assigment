@@ -6,7 +6,7 @@ interface CategoryTabsProps {
 
 export const CategoryTabs = ({ activeCategory = 'winner' }: CategoryTabsProps) => {
   return (
-    <div className="flex gap-2 px-4 py-3 overflow-x-auto bg-bg-base">
+    <div className="flex gap-1.5 sm:gap-2 px-2 sm:px-3 md:px-4 py-2 sm:py-2.5 md:py-3 overflow-x-auto bg-bg-base scrollbar-hide">
       <CategoryTab
         icon={<Clock size={14} />}
         label="Live & Upcoming"
@@ -40,7 +40,7 @@ interface CategoryTabProps {
 const CategoryTab = ({ icon, label, active }: CategoryTabProps) => {
   return (
     <button
-      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors ${
+      className={`flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 md:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-medium whitespace-nowrap transition-colors ${
         active
           ? 'bg-text-primary text-black'
           : 'bg-panel-bg text-muted'
