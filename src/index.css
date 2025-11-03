@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-base: #141F23;
+    --panel-bg: #17272C;
+    --muted: #666666;
+    --text-primary: #D5D8D9;
+    --accent-green: #8CF056;
+    --accent-red: #ff4444;
+    --accent-highlight: #ff6b35;
+  }
+}
+
+@keyframes borderFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}

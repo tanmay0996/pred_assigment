@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Preview - Trading UI</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .container {
+      text-align: center;
+    }
+    .phone-frame {
+      width: 375px;
+      height: 667px;
+      border: 12px solid #1a1a1a;
+      border-radius: 36px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      overflow: hidden;
+      background: white;
+      position: relative;
+      margin: 20px auto;
+    }
+    .phone-frame::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 28px;
+      background: #1a1a1a;
+      border-radius: 0 0 20px 20px;
+      z-index: 100;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+    .note {
+      max-width: 375px;
+      margin: 20px auto;
+      padding: 15px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📱 Mobile Preview</h1>
+    <p>Trading Mobile UI - Pixel Perfect Implementation</p>
+
+    <div class="phone-frame">
+      <iframe src="/"></iframe>
+    </div>
+
+    <div class="note">
+      <strong>Note:</strong> This preview shows the app at the exact mobile viewport size (375x667px) matching the reference screenshot.
+      Run <code>npm run dev</code> to start the development server.
+    </div>
+  </div>
+</body>
+</html>
