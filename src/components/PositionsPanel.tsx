@@ -24,7 +24,7 @@ export const PositionsPanel = ({ positions, onClosePosition }: PositionsPanelPro
   const [activeTab, setActiveTab] = useState<TabType>('positions');
 
   return (
-    <div className="bg-dark-bg rounded-lg min-h-[240px] border border-dark-panel">
+    <div className="bg-dark-bg rounded-lg min-h-[240px] border border-dark-panel ">
       <div className="flex border-b border-dark-panel">
         <button
           onClick={() => setActiveTab('positions')}

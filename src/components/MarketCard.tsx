@@ -48,7 +48,7 @@ export const MarketCard = ({ logo, title, volume, chance, priceChange }: MarketC
     <div className="bg-panel-bg w-full max-w-[412px]">
       <div className="flex items-start justify-between px-3 sm:px-4 py-3 sm:py-4">
         <div className="flex items-start gap-2 sm:gap-2.5 md:gap-3">
-          <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-white flex items-center justify-center text-xl sm:text-2xl">
+          <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-white flex items-center justify-center text-xl sm:text-2xl ">
             {logo}
           </div>
           <div>

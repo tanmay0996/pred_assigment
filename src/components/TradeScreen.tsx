@@ -49,7 +49,7 @@ export const TradeScreen = () => {
       <HeaderBar />
       <CategoryTabs />
 
-      <div className="px-2 sm:px-3 md:px-4 py-2 sm:py-2.5 md:py-3">
+      <div className=" sm:px-3 md:px-4  sm:py-2.5 md:py-3">
         <MarketCard
           logo="⚽"
           title="MANC"

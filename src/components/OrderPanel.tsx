@@ -36,7 +36,7 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
     : '0';
 
   return (
-    <div className="bg-bg-base h-full flex flex-col overflow-y-auto px-3 sm:px-4 md:px-5">
+    <div className="bg-bg-base h-full flex flex-col overflow-y-auto px-1 sm:px-4 md:px-5 py-4">
       <div className="flex gap-1.5 sm:gap-2 mb-3 sm:mb-4">
         <button
           onClick={() => setOrderType('long')}

@@ -6,7 +6,7 @@ interface CategoryTabsProps {
 
 export const CategoryTabs = ({ activeCategory = 'winner' }: CategoryTabsProps) => {
   return (
-    <div className="flex w-full max-w-[412px] bg-gray-900 scrollbar-hide">
+    <div className="flex w-full max-w-[412px] bg-bg-base scrollbar-hide">
       <CategoryTab
         icon={<Clock size={14} />}
         label="Live & Upcoming"
