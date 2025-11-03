@@ -60,7 +60,7 @@ export const TradeScreen = () => {
       </div>
 
       <div className="px-4">
-        <div className="flex items-stretch w-[412px] h-[400px]">
+        <div className="flex items-stretch w-full max-w-[412px] mx-auto h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px]">
           <div className="w-1/2 pr-2">
             <OrderPanel availableBalance={265} marketName="MANC" />
           </div>
