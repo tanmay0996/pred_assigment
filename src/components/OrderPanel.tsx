@@ -36,14 +36,14 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
     : '0';
 
   return (
-    <div className="bg-panel-bg rounded-lg p-2 sm:p-3 md:p-4 h-full flex flex-col overflow-y-auto">
+    <div className="bg-bg-base h-full flex flex-col overflow-y-auto px-3 sm:px-4 md:px-5">
       <div className="flex gap-1.5 sm:gap-2 mb-3 sm:mb-4">
         <button
           onClick={() => setOrderType('long')}
           className={`flex-1 py-1.5 sm:py-2 rounded font-medium text-xs sm:text-sm transition-colors ${
             orderType === 'long'
               ? 'bg-primary text-black'
-              : 'bg-bg-base text-muted'
+              : 'bg-panel-bg text-muted'
           }`}
         >
           Long/Buy
@@ -53,7 +53,7 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
           className={`flex-1 py-1.5 sm:py-2 rounded font-medium text-xs sm:text-sm transition-colors ${
             orderType === 'short'
               ? 'bg-danger text-white'
-              : 'bg-bg-base text-muted'
+              : 'bg-panel-bg text-muted'
           }`}
         >
           Short/Sell
@@ -64,7 +64,7 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
         <div className="relative">
           <button
             onClick={() => setShowPriceDropdown(!showPriceDropdown)}
-            className="w-full flex items-center justify-between bg-bg-base px-2 sm:px-3 py-2 sm:py-2.5 rounded text-xs sm:text-sm"
+            className="w-full flex items-center justify-between bg-bg-base border border-[#1B2A30] px-2 sm:px-3 py-2 sm:py-2.5 rounded text-xs sm:text-sm"
           >
             <span className="text-text-primary">
               {priceType === 'market' ? 'Market Price' : 'Limit Price'}
@@ -102,7 +102,7 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
               value={limitPrice}
               onChange={(e) => setLimitPrice(e.target.value)}
               placeholder="Enter limit price"
-              className="w-full bg-bg-base px-2 sm:px-3 py-2 sm:py-2.5 rounded text-xs sm:text-sm text-text-primary placeholder:text-muted focus:outline-none focus:ring-1 focus:ring-primary"
+              className="w-full bg-bg-base border border-[#1B2A30] px-2 sm:px-3 py-2 sm:py-2.5 rounded text-xs sm:text-sm text-text-primary placeholder:text-muted focus:outline-none focus:ring-1 focus:ring-primary"
             />
           </div>
         )}
@@ -110,7 +110,7 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
         <div className="relative">
           <button
             onClick={() => setShowAssetDropdown(!showAssetDropdown)}
-            className="w-full flex items-center justify-between bg-bg-base px-2 sm:px-3 py-2 sm:py-2.5 rounded text-xs sm:text-sm"
+            className="w-full flex items-center justify-between bg-bg-base border border-[#1B2A30] px-2 sm:px-3 py-2 sm:py-2.5 rounded text-xs sm:text-sm"
           >
             <span className="text-text-primary">{assetType.toUpperCase()}</span>
             <ChevronDown size={14} className="text-muted sm:w-4 sm:h-4" />
@@ -149,7 +149,7 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
                 setAmount((currentAmount - 1).toFixed(2));
               }
             }}
-            className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center bg-bg-base rounded text-muted hover:text-text-primary"
+            className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center bg-bg-base border border-[#1B2A30] rounded text-muted hover:text-text-primary"
           >
             <Minus size={14} className="sm:w-4 sm:h-4" />
           </button>
@@ -157,14 +157,14 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
             type="text"
             value={amount}
             onChange={(e) => handleAmountChange(e.target.value)}
-            className="flex-1 bg-bg-base px-2 sm:px-3 py-1.5 sm:py-2 rounded text-xs sm:text-sm text-text-primary text-center focus:outline-none focus:ring-1 focus:ring-primary"
+            className="flex-1 bg-bg-base border border-[#1B2A30] px-2 sm:px-3 py-1.5 sm:py-2 rounded text-xs sm:text-sm text-text-primary text-center focus:outline-none focus:ring-1 focus:ring-primary"
           />
           <button
             onClick={() => {
               const currentAmount = parseFloat(amount) || 0;
               setAmount((currentAmount + 1).toFixed(2));
             }}
-            className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center bg-bg-base rounded text-muted hover:text-text-primary"
+            className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center bg-bg-base border border-[#1B2A30] rounded text-muted hover:text-text-primary"
           >
             <Plus size={14} className="sm:w-4 sm:h-4" />
           </button>
@@ -173,19 +173,19 @@ export const OrderPanel = ({ availableBalance, marketName }: OrderPanelProps) =>
         <div className="flex gap-1.5 sm:gap-2">
           <button
             onClick={() => handlePercentClick(25)}
-            className="flex-1 py-1 sm:py-1.5 bg-bg-base rounded text-[10px] sm:text-xs text-muted hover:text-text-primary"
+            className="flex-1 py-1 sm:py-1.5 bg-bg-base border border-[#1B2A30] rounded text-[10px] sm:text-xs text-muted hover:text-text-primary"
           >
             25%
           </button>
           <button
             onClick={() => handlePercentClick(50)}
-            className="flex-1 py-1 sm:py-1.5 bg-bg-base rounded text-[10px] sm:text-xs text-muted hover:text-text-primary"
+            className="flex-1 py-1 sm:py-1.5 bg-bg-base border border-[#1B2A30] rounded text-[10px] sm:text-xs text-muted hover:text-text-primary"
           >
             50%
           </button>
           <button
             onClick={() => handlePercentClick(100)}
-            className="flex-1 py-1 sm:py-1.5 bg-bg-base rounded text-[10px] sm:text-xs text-muted hover:text-text-primary"
+            className="flex-1 py-1 sm:py-1.5 bg-bg-base border border-[#1B2A30] rounded text-[10px] sm:text-xs text-muted hover:text-text-primary"
           >
             100%
           </button>

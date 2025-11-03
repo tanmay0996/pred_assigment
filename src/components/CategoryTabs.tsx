@@ -6,26 +6,30 @@ interface CategoryTabsProps {
 
 export const CategoryTabs = ({ activeCategory = 'winner' }: CategoryTabsProps) => {
   return (
-    <div className="flex gap-1.5 sm:gap-2 px-2 sm:px-3 md:px-4 py-2 sm:py-2.5 md:py-3 overflow-x-auto bg-bg-base scrollbar-hide">
+    <div className="flex w-full max-w-[412px] bg-gray-900 scrollbar-hide">
       <CategoryTab
         icon={<Clock size={14} />}
         label="Live & Upcoming"
         active={false}
+        position="first"
       />
       <CategoryTab
         icon={<Trophy size={14} />}
         label="Winner"
         active={activeCategory === 'winner'}
+        position="middle"
       />
       <CategoryTab
         icon={<Award size={14} />}
         label="MVP"
         active={false}
+        position="middle"
       />
       <CategoryTab
         icon={<TrendingUp size={14} />}
         label="Top 3 te"
         active={false}
+        position="last"
       />
     </div>
   );
@@ -35,15 +39,22 @@ interface CategoryTabProps {
   icon: React.ReactNode;
   label: string;
   active: boolean;
+  position: 'first' | 'middle' | 'last';
 }
 
-const CategoryTab = ({ icon, label, active }: CategoryTabProps) => {
+const CategoryTab = ({ icon, label, active, position }: CategoryTabProps) => {
+  const getRoundedClass = () => {
+    if (position === 'first') return 'rounded-l';
+    if (position === 'last') return 'rounded-r';
+    return '';
+  };
+
   return (
     <button
-      className={`flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 md:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-medium whitespace-nowrap transition-colors ${
+      className={`flex items-center justify-center gap-1 sm:gap-1.5 flex-1 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm font-medium whitespace-nowrap transition-colors ${getRoundedClass()} ${
         active
-          ? 'bg-text-primary text-black'
-          : 'bg-panel-bg text-muted'
+          ? 'bg-white text-black'
+          : 'bg-gray-800 text-gray-400'
       }`}
     >
       {icon}
